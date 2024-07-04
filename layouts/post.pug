@@ -7,7 +7,7 @@ html(lang="zh")
         +meta(post)
         +gbase()
         title= __title__(post.title,'read')
-    body.colorful(OCP='OVERRIDE',style='--color1:'+Plugin.getColorByString(post.foreword)+';--color2:'+Plugin.getColorByString(post.parsed.foreword))
+    body.colorful(OCP='OVERRIDE',style='--color1:'+plugin.getColorByString(post.foreword)+';--color2:'+plugin.getColorByString(post.parsed.foreword))
         +gnome_header()
         .intro#intro.tac
             .h1= post.title
@@ -29,10 +29,10 @@ html(lang="zh")
                     - let latest = post.prevID?false:true
                     - let __prev = IDMap.get(post.prevID)
                     - let __next = IDMap.get(post.nextID)
-                    a.arrow.left.nowrap(href=!latest&&file(__prev.paths.website),class=latest?'disabled':'')
+                    a.arrow.left.nowrap(href=!latest&&file(__prev.path.website),class=latest?'disabled':'')
                         = '← '
                         = latest?i18n('Already latest'):__prev.title
-                    a.arrow.right.nowrap(href=!earliest&&file(__next.paths.website),class=earliest?'disabled':'')
+                    a.arrow.right.nowrap(href=!earliest&&file(__next.path.website),class=earliest?'disabled':'')
                         = earliest?i18n('Already earliest'):__next.title
                         = ' →'
                     a.top(href='#')= i18n('Top')

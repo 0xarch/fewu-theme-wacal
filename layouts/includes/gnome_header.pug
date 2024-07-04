@@ -7,7 +7,7 @@ header.top
                 != fewu.logo()
         nav.index
             ul
-                each v in __prov_map||theme.headerObjects
+                each v in Object.assign(__prov_map||theme.headerObjects,theme.extraNavigations)
                     li
                         if v[2]
                             a(href=file(v[0]))!= Plugin.load_svg(v[1])

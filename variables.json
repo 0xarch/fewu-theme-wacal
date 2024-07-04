@@ -28,5 +28,8 @@
             "gnome-feather-tool",
             true
         ]
+    ],
+    "extraNavigations": [
+
     ]
 }
